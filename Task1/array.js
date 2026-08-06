@@ -13,3 +13,7 @@ console.log(
   `Видалено перший: ${removedElements2}  
    Видалено останній:  ${removedElement}`,
 );
+
+const arrNumsCopy1 = Array.from(arrNums);
+const arrNumsCopy2 = [...arrNums];
+console.log("arrNumsCopy1=arrNumsCopy2? ", arrNumsCopy1 === arrNumsCopy2);
