@@ -17,3 +17,7 @@ console.log(
 const arrNumsCopy1 = Array.from(arrNums);
 const arrNumsCopy2 = [...arrNums];
 console.log("arrNumsCopy1=arrNumsCopy2? ", arrNumsCopy1 === arrNumsCopy2);
+
+console.log("Масив arrNums :>> ", arrNums);
+const arrNumsSlice = arrNums.slice(0, 4);
+console.log("Масив CopySlice :>> ", arrNumsSlice);
