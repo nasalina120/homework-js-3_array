@@ -1,8 +1,3 @@
-//  3. ✅ Методи перебору масивів (forEach, filter, map, findIndex, *some, *every):
-// 3.1. Отримати новий масив із заданого, який міститиме лише ненульові числа
-//        (-1, 5, 0, 9, -10 => -1, 5, 9, -10).
-// 3.2. Отримати новий масив їх заданого, який міститиме всі елементи вихідного, поділені на 100
-//        (99, 5, 0, 9, 30 => 0.99, 0.05, 0, 0.09, 0.3).
 // 3.3. Вивести елементи масиву, зведені у куб.
 // 3.4. Визначити індекс елемента, квадрат якого дорівнює 100, і видалити його, або видати діагностичне повідомлення, якщо такого елементу не існує.
 // 3.4. Знайти в масиві перше число, яке є більшим за 50. Вивести це число в консоль. Якщо такого числа немає — вивести undefined.
@@ -16,4 +11,19 @@ function nonZeroNums(numbers) {
 }
 
 const arrNonZeros = arrs.filter(nonZeroNums);
-console.log("arrNonZero  :>> ", arrNonZeros);
+console.log("arrs :>> ", arrs);
+console.log("arrNonZero :>> ", arrNonZeros);
+
+const arrs1 = [99, 5, 0, 9, 30];
+
+function divideBy100(numbers) {
+  return numbers / 100;
+}
+const divNums = arrs1.map(divideBy100);
+console.log("arrs1 :>> ", arrs1);
+console.log("divNums :>> ", divNums);
+
+function cubeNum(items) {
+  console.log("items :>> ", items ** 3);
+}
+arrs1.forEach(cubeNum);
