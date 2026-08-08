@@ -98,5 +98,10 @@ const totalAge = users.reduce(averageAge, 0);
 const resultAverageAge = Math.round(totalAge / users.length);
 console.log("resultAverageAge :>> ", resultAverageAge);
 
-// 4.8. ⭐ Впорядкувати користувачів за віком (від наймолодшого до найстаршого) (sort).
 // 4.9. ⭐ Перевірити, чи є в масиві користувач з email'ом useremail7@gmail.com.
+function checkEmail(user) {
+  return user.email === "useremail7@gmail.com";
+}
+
+const isEmailExists = users.some(checkEmail);
+console.log("isEmailExists :>> ", isEmailExists);
