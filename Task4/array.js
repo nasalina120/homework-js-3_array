@@ -69,7 +69,15 @@ const deleteEmail = users.findIndex(findEmail);
 console.log("deleteEmail :>> ", deleteEmail);
 users.splice(deleteEmail, 1);
 console.table(users);
+
 // 4.5. ⭐ Змінити email користувачу з id 2 (можна спробувати використати find).
+
+function findId(user) {
+  if (user.id === 2) return (user.email = "useremail2222222@gmail.com");
+}
+users.find(findId);
+console.table(users);
+
 // 4.6. ⭐ Визначити, який відсоток користувачів підписані (subscribed).
 // 4.7. ⭐ Знайти середній вік користувачів (спробувати використати reduce).
 // 4.8. ⭐ Впорядкувати користувачів за віком (від наймолодшого до найстаршого) (sort).
