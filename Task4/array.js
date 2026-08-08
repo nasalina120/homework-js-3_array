@@ -31,3 +31,29 @@ for (let i = 0; i < 10; i++) {
 
 console.table(users);
 console.log("firstName users1 :>> ", users[0].getFullName());
+
+// 4.1. ⭐ Отримати масив користувачів, які не підписані (not subscribed).
+
+function getNotSubscribed(user) {
+  if (user.isSubscribed === false) return user;
+}
+
+const arrNotSubscribed = users.filter(getNotSubscribed);
+console.log("arrNotSubscribed :>> ", arrNotSubscribed);
+
+// 4.2. ⭐ Вивести список повних імен користувачів.
+
+function getUserNames(user) {
+  return user.getFullName();
+}
+const userNames = users.map(getUserNames);
+console.log("userNames :>> ");
+console.table(userNames);
+
+// 4.3. ⭐ Отримати масив повних імен осіб жіночої статі шкільного віку (6 – 18 років).
+// 4.4. ⭐ Видалити з масиву користувача з email  useremail5@gmail.com.
+// 4.5. ⭐ Змінити email користувачу з id 2 (можна спробувати використати find).
+// 4.6. ⭐ Визначити, який відсоток користувачів підписані (subscribed).
+// 4.7. ⭐ Знайти середній вік користувачів (спробувати використати reduce).
+// 4.8. ⭐ Впорядкувати користувачів за віком (від наймолодшого до найстаршого) (sort).
+// 4.9. ⭐ Перевірити, чи є в масиві користувач з email'ом useremail7@gmail.com.
