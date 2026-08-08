@@ -79,6 +79,15 @@ users.find(findId);
 console.table(users);
 
 // 4.6. ⭐ Визначити, який відсоток користувачів підписані (subscribed).
+
+function subscribedUsers(user) {
+  if (user.isSubscribed === true) return true;
+}
+
+const subUsers = users.filter(subscribedUsers);
+const subUsersResult = (subUsers.length / users.length) * 100;
+console.log("subUsersResult :>> ", subUsersResult);
+
 // 4.7. ⭐ Знайти середній вік користувачів (спробувати використати reduce).
 // 4.8. ⭐ Впорядкувати користувачів за віком (від наймолодшого до найстаршого) (sort).
 // 4.9. ⭐ Перевірити, чи є в масиві користувач з email'ом useremail7@gmail.com.
