@@ -1,28 +1,20 @@
 const arrs = [-1, 5, 0, 9, -10];
 
-const nonZeroNums = (numbers) => numbers !== 0;
-
-const arrNonZeros = arrs.filter(nonZeroNums);
+const arrNonZeros = arrs.filter((numbers) => numbers !== 0);
 console.log("arrs :>> ", arrs);
 console.log("arrNonZero :>> ", arrNonZeros);
 
 const arrs1 = [99, 5, 0, 10, 9, 30];
 
-const divideBy100 = (numbers) => numbers / 100;
-
-const divNums = arrs1.map(divideBy100);
+const divNums = arrs1.map((numbers) => numbers / 100);
 console.log("arrs1 :>> ", arrs1);
 console.log("divNums :>> ", divNums);
 
-const cubeNum = (items) => console.log("items :>> ", items ** 3);
-
-arrs1.forEach(cubeNum);
-
-const checkSquare100 = (num) => num ** 2 === 100;
+arrs1.forEach((items) => console.log("items :>> ", items ** 3));
 
 console.log("arrs1 :>> ", arrs1);
 
-const targetIndex = arrs1.findIndex(checkSquare100);
+const targetIndex = arrs1.findIndex((num) => num ** 2 === 100);
 
 if (targetIndex !== -1) {
   arrs1.splice(targetIndex, 1);
@@ -32,7 +24,5 @@ if (targetIndex !== -1) {
 
 console.log("arrs1 :>> ", arrs1);
 
-const isGreater50 = (num) => num > 50;
-
-const foundNum = arrs1.find(isGreater50);
+const foundNum = arrs1.find((num) => num > 50);
 console.log("foundNum  :>> ", foundNum);
