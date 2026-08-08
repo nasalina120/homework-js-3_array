@@ -1,9 +1,3 @@
-// 2. ✅ Перебір масиву класичними циклами:
-// (Не використовувати методи перебору масивів (forEach, filter, map, findIndex))
-// 2.1. Вивести елементи з парними індексами.
-// 2.2. Знайти добуток елементів масиву.
-// 2.3. Порахувати та вивести в консоль кількість додатних елементів у масиві.
-
 const arrNums = [1, 4, 8, -4, 4, 6, 0.4];
 console.log("Масив arrNums :>> ", arrNums);
 
@@ -17,3 +11,9 @@ for (let i = 0; i < arrNums.length; i++) {
   multResult *= arrNums[i];
 }
 console.log("multResult :>> ", multResult);
+
+let positiveCount = 0;
+for (let i = 0; i < arrNums.length; i++) {
+  if (arrNums[i] > 0) positiveCount++;
+}
+console.log("positiveCount :>> ", positiveCount);
