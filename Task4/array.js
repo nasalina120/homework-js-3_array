@@ -34,38 +34,28 @@ console.log("firstName users1 :>> ", users[0].getFullName());
 
 // 4.1. ⭐ Отримати масив користувачів, які не підписані (not subscribed).
 
-function getNotSubscribed(user) {
-  if (user.isSubscribed === false) return user;
-}
-
-const arrNotSubscribed = users.filter(getNotSubscribed);
+const arrNotSubscribed = users.filter((user) => !user.isSubscribed);
 console.log("arrNotSubscribed :>> ", arrNotSubscribed);
 
 // 4.2. ⭐ Вивести список повних імен користувачів.
 
-function getUserNames(user) {
-  return user.getFullName();
-}
-const userNames = users.map(getUserNames);
+const userNames = users.map((user) => user.getFullName());
 console.log("userNames :>> ");
 console.table(userNames);
 
 // 4.3. ⭐ Отримати масив повних імен осіб жіночої статі шкільного віку (6 – 18 років).
 
-function getGirl(user) {
-  if (user.isMale === false && user.age >= 6 && user.age <= 18) return user;
-}
-
-const userGirl = users.filter(getGirl).map(getUserNames);
+const userGirl = users
+  .filter((user) => user.isMale === false && user.age >= 6 && user.age <= 18)
+  .map((user) => user.getFullName());
 console.log("userGirl :>> ");
 console.table(userGirl);
 
 // 4.4. ⭐ Видалити з масиву користувача з email  useremail5@gmail.com.
 
-function findEmail(user) {
-  return user.email === "useremail5@gmail.com";
-}
-const deleteEmail = users.findIndex(findEmail);
+const deleteEmail = users.findIndex(
+  (user) => user.email === "useremail5@gmail.com",
+);
 console.log("deleteEmail :>> ", deleteEmail);
 users.splice(deleteEmail, 1);
 console.table(users);
@@ -80,28 +70,22 @@ console.table(users);
 
 // 4.6. ⭐ Визначити, який відсоток користувачів підписані (subscribed).
 
-function subscribedUsers(user) {
-  if (user.isSubscribed === true) return true;
-}
-
-const subUsers = users.filter(subscribedUsers);
+const subUsers = users.filter((user) => user.isSubscribed === true);
 const subUsersResult = Math.round((subUsers.length / users.length) * 100);
 console.log("subUsersResult :>> ", subUsersResult);
 
 // 4.7. ⭐ Знайти середній вік користувачів (спробувати використати reduce).
 
-function averageAge(sumAverageAge, user) {
-  return sumAverageAge + user.age;
-}
-
-const totalAge = users.reduce(averageAge, 0);
+const totalAge = users.reduce(
+  (sumAverageAge, user) => sumAverageAge + user.age,
+  0,
+);
 const resultAverageAge = Math.round(totalAge / users.length);
 console.log("resultAverageAge :>> ", resultAverageAge);
 
 // 4.9. ⭐ Перевірити, чи є в масиві користувач з email'ом useremail7@gmail.com.
-function checkEmail(user) {
-  return user.email === "useremail7@gmail.com";
-}
 
-const isEmailExists = users.some(checkEmail);
+const isEmailExists = users.some(
+  (user) => user.email === "useremail7@gmail.com",
+);
 console.log("isEmailExists :>> ", isEmailExists);
