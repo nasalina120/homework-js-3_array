@@ -61,6 +61,14 @@ console.log("userGirl :>> ");
 console.table(userGirl);
 
 // 4.4. ⭐ Видалити з масиву користувача з email  useremail5@gmail.com.
+
+function findEmail(user) {
+  return user.email === "useremail5@gmail.com";
+}
+const deleteEmail = users.findIndex(findEmail);
+console.log("deleteEmail :>> ", deleteEmail);
+users.splice(deleteEmail, 1);
+console.table(users);
 // 4.5. ⭐ Змінити email користувачу з id 2 (можна спробувати використати find).
 // 4.6. ⭐ Визначити, який відсоток користувачів підписані (subscribed).
 // 4.7. ⭐ Знайти середній вік користувачів (спробувати використати reduce).
