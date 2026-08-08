@@ -85,9 +85,18 @@ function subscribedUsers(user) {
 }
 
 const subUsers = users.filter(subscribedUsers);
-const subUsersResult = (subUsers.length / users.length) * 100;
+const subUsersResult = Math.round((subUsers.length / users.length) * 100);
 console.log("subUsersResult :>> ", subUsersResult);
 
 // 4.7. ⭐ Знайти середній вік користувачів (спробувати використати reduce).
+
+function averageAge(sumAverageAge, user) {
+  return sumAverageAge + user.age;
+}
+
+const totalAge = users.reduce(averageAge, 0);
+const resultAverageAge = Math.round(totalAge / users.length);
+console.log("resultAverageAge :>> ", resultAverageAge);
+
 // 4.8. ⭐ Впорядкувати користувачів за віком (від наймолодшого до найстаршого) (sort).
 // 4.9. ⭐ Перевірити, чи є в масиві користувач з email'ом useremail7@gmail.com.
