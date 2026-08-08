@@ -51,6 +51,15 @@ console.log("userNames :>> ");
 console.table(userNames);
 
 // 4.3. ⭐ Отримати масив повних імен осіб жіночої статі шкільного віку (6 – 18 років).
+
+function getGirl(user) {
+  if (user.isMale === false && user.age >= 6 && user.age <= 18) return user;
+}
+
+const userGirl = users.filter(getGirl).map(getUserNames);
+console.log("userGirl :>> ");
+console.table(userGirl);
+
 // 4.4. ⭐ Видалити з масиву користувача з email  useremail5@gmail.com.
 // 4.5. ⭐ Змінити email користувачу з id 2 (можна спробувати використати find).
 // 4.6. ⭐ Визначити, який відсоток користувачів підписані (subscribed).
