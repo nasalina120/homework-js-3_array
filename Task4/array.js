@@ -46,7 +46,7 @@ console.table(userNames);
 // 4.3. ⭐ Отримати масив повних імен осіб жіночої статі шкільного віку (6 – 18 років).
 
 const userGirl = users
-  .filter((user) => user.isMale === false && user.age >= 6 && user.age <= 18)
+  .filter((user) => !user.isMale && user.age >= 6 && user.age <= 18)
   .map((user) => user.getFullName());
 console.log("userGirl :>> ");
 console.table(userGirl);
@@ -57,20 +57,22 @@ const deleteEmail = users.findIndex(
   (user) => user.email === "useremail5@gmail.com",
 );
 console.log("deleteEmail :>> ", deleteEmail);
-users.splice(deleteEmail, 1);
-console.table(users);
+if (deleteEmail !== -1) {
+  users.splice(deleteEmail, 1);
+} else {
+  console.log("Користувача з такою поштою не знайдено");
+}
 
 // 4.5. ⭐ Змінити email користувачу з id 2 (можна спробувати використати find).
 
-function findId(user) {
-  if (user.id === 2) return (user.email = "useremail2222222@gmail.com");
-}
-users.find(findId);
+const user = users.find((user) => user.id === 2);
+
+if (user) user.email = "useremail2222222@gmail.com";
 console.table(users);
 
 // 4.6. ⭐ Визначити, який відсоток користувачів підписані (subscribed).
 
-const subUsers = users.filter((user) => user.isSubscribed === true);
+const subUsers = users.filter((user) => user.isSubscribed);
 const subUsersResult = Math.round((subUsers.length / users.length) * 100);
 console.log("subUsersResult :>> ", subUsersResult);
 
